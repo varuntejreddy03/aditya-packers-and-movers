@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.asset.json";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -20,11 +19,14 @@ export function BrandLogo({
     >
       <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-md bg-card p-1 shadow-card sm:h-14 sm:w-14">
         <img
-          src={logo.url}
+          src="/logo.jpg"
           alt={`${site.name} logo`}
           width={56}
           height={56}
           className="h-full w-full object-contain"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = "/favicon.png";
+          }}
         />
       </span>
       {showText ? (

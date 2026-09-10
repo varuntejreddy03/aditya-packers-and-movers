@@ -18,25 +18,6 @@ export const Route = createFileRoute("/services/$slug")({
     if (!service) throw notFound();
     return { slug: service.slug, title: service.title, blurb: service.blurb };
   },
-  head: ({ loaderData }) => {
-    if (!loaderData) {
-      return {
-        meta: [{ title: "Service not found | Aditya Packers and Movers" }, { name: "robots", content: "noindex" }],
-      };
-    }
-    const title = `${loaderData.title} in Rajahmundry | Aditya Packers and Movers`;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: loaderData.blurb.slice(0, 155) },
-        { property: "og:title", content: title },
-        { property: "og:description", content: loaderData.blurb.slice(0, 155) },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: `/services/${loaderData.slug}` },
-      ],
-      links: [{ rel: "canonical", href: `/services/${loaderData.slug}` }],
-    };
-  },
   component: ServiceDetailPage,
   notFoundComponent: ServiceNotFound,
 });

@@ -10,26 +10,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { galleryCategories, galleryImages } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Moving Gallery | Aditya Packers and Movers, Rajahmundry" },
-      {
-        name: "description",
-        content:
-          "A visual look at how we pack, load, transport and deliver — household shifting, office moves, vehicle transport and unloading in Rajahmundry.",
-      },
-      { property: "og:title", content: "Moving Gallery | Aditya Packers and Movers" },
-      {
-        property: "og:description",
-        content: "A look at the care behind every move — packing, loading, transport and delivery.",
-      },
-      { property: "og:url", content: "/gallery" },
-    ],
-    links: [{ rel: "canonical", href: "/gallery" }],
-  }),
-  component: GalleryPage,
-});
+export const Route = createFileRoute("/gallery")({ component: GalleryPage });
 
 function GalleryPage() {
   const [active, setActive] = useState("All");

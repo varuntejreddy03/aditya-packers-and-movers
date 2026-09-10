@@ -9,27 +9,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { TrustStrip } from "@/components/trust-strip";
 import { services } from "@/lib/services";
 
-export const Route = createFileRoute("/services/")({
-  head: () => ({
-    meta: [
-      { title: "Moving Services in Rajahmundry | Aditya Packers and Movers" },
-      {
-        name: "description",
-        content:
-          "House shifting, office relocation, packing and unpacking, local shifting, domestic relocation, loading, transport, vehicle and shop moving in Rajahmundry.",
-      },
-      { property: "og:title", content: "Moving Services in Rajahmundry" },
-      {
-        property: "og:description",
-        content:
-          "Nine relocation services from Aditya Packers and Movers, Rajahmundry — homes, offices, shops and vehicles.",
-      },
-      { property: "og:url", content: "/services" },
-    ],
-    links: [{ rel: "canonical", href: "/services" }],
-  }),
-  component: ServicesPage,
-});
+export const Route = createFileRoute("/services/")({ component: ServicesPage });
 
 function ServicesPage() {
   return (

@@ -28,30 +28,7 @@ import { CountUp } from "@/components/count-up";
 import { services } from "@/lib/services";
 import { mapsSearchUrl, site } from "@/lib/site";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Packers and Movers in Rajahmundry | Aditya Packers and Movers" },
-      {
-        name: "description",
-        content:
-          "Aditya Packers and Movers offers house shifting, office relocation, packing and vehicle transport in Rajahmundry. 10 years of experience. Open every day, 7 AM–9 PM.",
-      },
-      {
-        property: "og:title",
-        content: "Packers and Movers in Rajahmundry | Aditya Packers and Movers",
-      },
-      {
-        property: "og:description",
-        content:
-          "Safe, secure and on-time moving services in Rajahmundry for homes, offices, shops and vehicles.",
-      },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: HomePage,
-});
+export const Route = createFileRoute("/")({ component: HomePage });
 
 const whyUs = [
   {

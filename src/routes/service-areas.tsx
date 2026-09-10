@@ -10,27 +10,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { mapsEmbedUrl, mapsSearchUrl, site } from "@/lib/site";
 
-export const Route = createFileRoute("/service-areas")({
-  head: () => ({
-    meta: [
-      { title: "Service Areas | Packers and Movers in Rajahmundry" },
-      {
-        name: "description",
-        content:
-          "Local shifting in and around Rajahmundry, plus domestic relocation enquiries to other cities in India. Share your pickup and destination to confirm coverage.",
-      },
-      { property: "og:title", content: "Service Areas | Aditya Packers and Movers" },
-      {
-        property: "og:description",
-        content:
-          "Based on Paper Mill Road, Rajahmundry — local moves in the city and domestic relocation across India.",
-      },
-      { property: "og:url", content: "/service-areas" },
-    ],
-    links: [{ rel: "canonical", href: "/service-areas" }],
-  }),
-  component: ServiceAreasPage,
-});
+export const Route = createFileRoute("/service-areas")({ component: ServiceAreasPage });
 
 function ServiceAreasPage() {
   return (

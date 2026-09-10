@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Instagram, Mail, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 
 import banner from "@/assets/contact-banner.jpg";
-import logo from "@/assets/logo.asset.json";
 import { FaqList } from "@/components/faq-list";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { QuoteForm } from "@/components/quote-form";
@@ -17,27 +16,7 @@ import {
   whatsappUrl,
 } from "@/lib/site";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact & Free Quote | Aditya Packers and Movers Rajahmundry" },
-      {
-        name: "description",
-        content:
-          "Call +91 85000 83803 or send a WhatsApp quote enquiry to Aditya Packers and Movers, Paper Mill Road, Rajahmundry. Open every day, 7:00 AM – 9:00 PM.",
-      },
-      { property: "og:title", content: "Contact Aditya Packers and Movers, Rajahmundry" },
-      {
-        property: "og:description",
-        content:
-          "Phone, WhatsApp, email and address for moving enquiries in Rajahmundry. Open every day, 7 AM–9 PM.",
-      },
-      { property: "og:url", content: "/contact" },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
-  }),
-  component: ContactPage,
-});
+export const Route = createFileRoute("/contact")({ component: ContactPage });
 
 const contactFaqs = [
   {
@@ -75,7 +54,7 @@ function ContactPage() {
           <PageBreadcrumb tone="dark" items={[{ label: "Home", to: "/" }, { label: "Contact" }]} />
           <div className="mt-6 flex items-center gap-4">
             <span className="hidden h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-card p-1.5 shadow-lift sm:flex">
-              <img src={logo.url} alt={`${site.name} logo`} width={64} height={64} className="h-full w-full object-contain" />
+              <img src="/logo.jpg" alt={`${site.name} logo`} width={64} height={64} className="h-full w-full object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/favicon.png"; }} />
             </span>
             <div className="min-w-0">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">

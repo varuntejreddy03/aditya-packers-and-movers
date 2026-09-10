@@ -18,27 +18,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/lib/site";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Aditya Packers and Movers | 10 Years in Rajahmundry" },
-      {
-        name: "description",
-        content:
-          "Aditya Packers and Movers is a trusted relocation service in Rajahmundry with 10 years of experience in safe packing, careful handling and timely delivery.",
-      },
-      { property: "og:title", content: "About Aditya Packers and Movers" },
-      {
-        property: "og:description",
-        content:
-          "Ten years of household shifting, office relocation and vehicle transport in Rajahmundry, Andhra Pradesh.",
-      },
-      { property: "og:url", content: "/about" },
-    ],
-    links: [{ rel: "canonical", href: "/about" }],
-  }),
-  component: AboutPage,
-});
+export const Route = createFileRoute("/about")({ component: AboutPage });
 
 const values = [
   { icon: ShieldCheck, title: "Safety", text: "Protective packing and correct handling so goods reach in the condition they left." },
