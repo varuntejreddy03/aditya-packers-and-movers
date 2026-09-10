@@ -67,7 +67,8 @@ export function QuoteForm({
       setErrors(next);
       return;
     }
-    const message = buildQuoteMessage(parsed.data);
+    const { details, ...rest } = parsed.data;
+    const message = buildQuoteMessage(details ? { ...rest, details } : rest);
     setOpened(true);
     window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
   };
