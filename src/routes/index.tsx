@@ -110,7 +110,13 @@ function HomePage() {
               businesses&mdash;handled carefully from pickup to delivery.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              Backed by our experience with{" "}
+              <span className="font-semibold text-primary">Sri Lakshmi Kalyani Packers and Movers</span>
+              {" "}— proven expertise, professional handling and reliable relocation on every move.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="cta" size="lg" className="arrow-nudge min-h-12">
                 <a href="#quick-quote">
                   Get a Free Quote
@@ -125,21 +131,27 @@ function HomePage() {
               </Button>
             </div>
 
-            <ul className="mt-9 flex flex-wrap gap-2.5">
-              {[
-                `${site.yearsExperience} Years of Experience`,
-                "Careful Handling",
-                "Local & Domestic Moves",
-              ].map((b) => (
-                <li
-                  key={b}
-                  className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm font-semibold text-primary shadow-card"
-                >
-                  <BadgeCheck className="h-4 w-4 text-accent" aria-hidden="true" />
-                  {b}
-                </li>
-              ))}
-            </ul>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4 rounded-xl border border-border bg-card px-5 py-4 shadow-card">
+              <div className="text-center">
+                <CountUp
+                  to={223}
+                  suffix="+"
+                  duration={1800}
+                  className="font-display text-3xl font-extrabold leading-none text-accent"
+                />
+                <p className="mt-0.5 text-xs font-semibold text-primary">Moves Completed</p>
+              </div>
+              <div className="h-8 w-px bg-border" aria-hidden="true" />
+              <div className="text-center">
+                <span className="font-display text-3xl font-extrabold leading-none text-accent">{site.yearsExperience}+</span>
+                <p className="mt-0.5 text-xs font-semibold text-primary">Years Experience</p>
+              </div>
+              <div className="h-8 w-px bg-border" aria-hidden="true" />
+              <div className="text-center">
+                <span className="font-display text-3xl font-extrabold leading-none text-accent">7</span>
+                <p className="mt-0.5 text-xs font-semibold text-primary">Days a Week</p>
+              </div>
+            </div>
           </div>
 
           {/* Hero visual */}
@@ -367,71 +379,6 @@ function HomePage() {
               </Link>
             </Button>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ---------- Credibility + stats ---------- */}
-      <section className="bg-background py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-lift">
-            <div className="grid lg:grid-cols-2">
-              {/* Credibility copy */}
-              <Reveal className="flex flex-col justify-center p-8 sm:p-10">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">Our legacy</p>
-                <h2 className="mt-3 font-display text-2xl font-extrabold text-primary sm:text-3xl">
-                  Proven expertise, trusted by families across Rajahmundry
-                </h2>
-                <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Backed by our experience with{" "}
-                  <span className="font-semibold text-primary">Sri Lakshmi Kalyani Packers and Movers</span>,
-                  we bring proven expertise, professional handling, and reliable relocation services
-                  to every move. That foundation of trust is what Aditya Packers and Movers is built on.
-                </p>
-                <ul className="mt-6 space-y-2">
-                  {[
-                    "Experienced crew trained across two brands",
-                    "Consistent packing standards on every job",
-                    "A reputation built move by move in Rajahmundry",
-                  ].map((pt) => (
-                    <li key={pt} className="flex gap-3 text-sm text-muted-foreground">
-                      <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-
-              {/* Stats */}
-              <Reveal
-                delay={100}
-                className="flex flex-col items-center justify-center gap-8 border-t border-border bg-primary p-8 sm:p-10 lg:border-l lg:border-t-0"
-              >
-                <div className="text-center">
-                  <div className="flex items-end justify-center gap-1">
-                    <CountUp
-                      to={223}
-                      duration={1800}
-                      suffix="+"
-                      className="font-display text-7xl font-extrabold leading-none text-accent sm:text-8xl"
-                    />
-                  </div>
-                  <p className="mt-3 font-display text-lg font-bold text-primary-foreground">
-                    Moves Successfully Completed
-                  </p>
-                  <p className="mt-1 text-sm text-primary-foreground/70">
-                    Households, offices, shops and vehicles — handled with care
-                  </p>
-                </div>
-                <div className="h-px w-16 bg-primary-foreground/20" aria-hidden="true" />
-                <div className="text-center">
-                  <p className="font-display text-4xl font-extrabold text-accent">{site.yearsExperience}+</p>
-                  <p className="mt-1 text-sm font-semibold text-primary-foreground">
-                    Years of combined experience
-                  </p>
-                </div>
-              </Reveal>
-            </div>
-          </div>
         </div>
       </section>
 
