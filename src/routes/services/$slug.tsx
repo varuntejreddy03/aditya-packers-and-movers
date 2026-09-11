@@ -95,7 +95,7 @@ function ServiceDetailPage() {
               alt={service.imageAlt}
               width={1280}
               height={960}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain bg-white"
             />
           </div>
         </div>

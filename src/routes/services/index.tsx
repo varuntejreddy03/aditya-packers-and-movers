@@ -42,7 +42,7 @@ function ServicesPage() {
                     width={1280}
                     height={960}
                     loading="lazy"
-                    className="h-44 w-full object-cover"
+                    className="h-44 w-full object-contain bg-white"
                   />
                   <div className="flex flex-1 flex-col p-6">
                     <h2 className="font-display text-lg font-bold text-primary">{s.title}</h2>
