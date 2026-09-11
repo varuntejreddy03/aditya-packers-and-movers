@@ -36,14 +36,21 @@ function ServicesPage() {
             {services.map((s, i) => (
               <Reveal as="li" key={s.slug} delay={i * 60} className="h-full">
                 <div className="card-lift group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-card">
-                  <img
-                    src={s.image}
-                    alt={s.imageAlt}
-                    width={1280}
-                    height={960}
-                    loading="lazy"
-                    className="h-44 w-full object-contain bg-white"
-                  />
+                  <div className="relative">
+                    <img
+                      src={s.image}
+                      alt={s.imageAlt}
+                      width={1280}
+                      height={960}
+                      loading="lazy"
+                      className="h-44 w-full object-contain bg-white"
+                    />
+                    {s.realPhoto && (
+                      <span className="absolute left-3 top-3 rounded-md bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-accent-foreground shadow">
+                        Actual Move
+                      </span>
+                    )}
+                  </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h2 className="font-display text-lg font-bold text-primary">{s.title}</h2>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">

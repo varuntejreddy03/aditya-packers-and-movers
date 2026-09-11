@@ -89,7 +89,7 @@ function ServiceDetailPage() {
               </Button>
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-primary-foreground/15 shadow-lift">
+          <div className="relative overflow-hidden rounded-2xl border border-primary-foreground/15 shadow-lift">
             <img
               src={service.image}
               alt={service.imageAlt}
@@ -97,6 +97,11 @@ function ServiceDetailPage() {
               height={960}
               className="h-full w-full object-contain bg-white"
             />
+            {service.realPhoto && (
+              <span className="absolute left-3 top-3 rounded-md bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-accent-foreground shadow">
+                Actual Move
+              </span>
+            )}
           </div>
         </div>
       </section>

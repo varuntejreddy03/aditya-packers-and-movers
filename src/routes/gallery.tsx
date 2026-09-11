@@ -30,7 +30,7 @@ function GalleryPage() {
             className="mt-6 max-w-3xl"
             eyebrow="Moving gallery"
             title="A look at the care behind every move"
-            description="These images illustrate how we work — packing, loading, transport, delivery and unloading. They are representative visuals, not photographs of specific completed projects."
+            description="Most photos below are from real moves we have completed. A small number are representative visuals for services where we have not yet published project photos."
           />
         </div>
       </section>
@@ -86,6 +86,11 @@ function GalleryPage() {
                         i % 5 === 0 ? "h-64 lg:h-[520px]" : "h-64",
                       )}
                     />
+                    {g.realPhoto && (
+                      <span className="absolute left-3 top-3 rounded-md bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-accent-foreground shadow">
+                        Actual Move
+                      </span>
+                    )}
                     <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-md bg-card/90 text-primary opacity-0 transition-opacity group-hover:opacity-100">
                       <ZoomIn className="h-4 w-4" aria-hidden="true" />
                     </span>
@@ -116,6 +121,11 @@ function GalleryPage() {
                   <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
                     {open.category}
                   </span>
+                  {open.realPhoto && (
+                    <span className="ml-2 rounded bg-accent px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-accent-foreground">
+                      Actual Move
+                    </span>
+                  )}
                   <span className="mt-1 block font-display text-sm font-semibold text-primary">
                     {open.caption}
                   </span>

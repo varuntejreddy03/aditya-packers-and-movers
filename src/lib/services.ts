@@ -11,17 +11,28 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import household from "@/assets/svc-household-shifting.png";
-import office from "@/assets/svc-office-shifting.png";
-import packing from "@/assets/svc-packing-unpacking.png";
-import localShift from "@/assets/svc-local-shifting.png";
-import highway from "@/assets/svc-domestic-relocation.png";
-import loading from "@/assets/svc-loading-unloading.png";
-import transport from "@/assets/svc-safe-transportation.png";
-import vehicle from "@/assets/svc-vehicle-transportation.png";
-import shop from "@/assets/svc-shop-relocation.png";
-import delivery from "@/assets/delivery-unpacking.jpg";
-import boxes from "@/assets/boxes-stack.jpg";
+import aiHousehold from "@/assets/svc-household-shifting.png";
+import aiPacking    from "@/assets/svc-packing-unpacking.png";
+import aiLocal      from "@/assets/svc-local-shifting.png";
+import aiDomestic   from "@/assets/svc-domestic-relocation.png";
+import aiLoading    from "@/assets/svc-loading-unloading.png";
+import aiTransport  from "@/assets/svc-safe-transportation.png";
+import office    from "@/assets/svc-office-shifting.png";
+import vehicle   from "@/assets/svc-vehicle-transportation.png";
+import shop      from "@/assets/svc-shop-relocation.png";
+import delivery  from "@/assets/delivery-unpacking.jpg";
+import boxes     from "@/assets/boxes-stack.jpg";
+
+// Real work photos from actual moves
+const WA_HOUSEHOLD   = "/WhatsApp Image 2026-09-11 at 8.10.03 AM (1).jpeg";
+const WA_PACKING     = "/WhatsApp Image 2026-09-11 at 8.29.07 AM.jpeg";
+const WA_FURNITURE   = "/WhatsApp Image 2026-09-11 at 8.29.08 AM.jpeg";
+const WA_SOFA        = "/WhatsApp Image 2026-09-11 at 8.13.01 AM.jpeg";
+const WA_SECURE      = "/WhatsApp Image 2026-09-11 at 8.13.02 AM.jpeg";
+const WA_GOODS       = "/WhatsApp Image 2026-09-11 at 8.29.07 AM (1).jpeg";
+const WA_LOCAL       = "/WhatsApp Image 2026-09-11 at 8.10.03 AM (2).jpeg";
+const WA_MOVING      = "/WhatsApp Image 2026-09-11 at 8.10.03 AM.jpeg";
+const WA_LOADING     = "/WhatsApp Image 2026-09-11 at 8.10.04 AM.jpeg";
 
 export type Service = {
   slug: string;
@@ -30,7 +41,9 @@ export type Service = {
   blurb: string;
   icon: LucideIcon;
   image: string;
+  cardImage: string;   // AI-generated — used on home page service cards
   imageAlt: string;
+  realPhoto?: true;
   heroEyebrow: string;
   intro: string[];
   suitableFor: string[];
@@ -48,8 +61,10 @@ export const services: Service[] = [
     blurb:
       "From a single bedroom to a full family home, we pack room by room, protect furniture and keep your belongings organised until everything is placed in your new house.",
     icon: Home,
-    image: household,
-    imageAlt: "Movers wrapping a sofa and packing household items in a bright living room",
+    image: WA_HOUSEHOLD,
+    cardImage: aiHousehold,
+    imageAlt: "Real photo: packed household items ready for shifting by Aditya Packers and Movers",
+    realPhoto: true,
     heroEyebrow: "House shifting Rajahmundry",
     intro: [
       "House shifting is the work we do most. Our team surveys your rooms, decides what needs extra protection, and packs everything in a sequence that keeps daily-use items accessible until the last moment.",
@@ -93,6 +108,7 @@ export const services: Service[] = [
       "Computers, files, workstations and cabinets moved in an ordered sequence so your team can restart work quickly at the new premises.",
     icon: Building2,
     image: office,
+    cardImage: office,
     imageAlt: "Relocation team packing computers and document boxes in a modern office",
     heroEyebrow: "Office relocation Rajahmundry",
     intro: [
@@ -136,8 +152,10 @@ export const services: Service[] = [
     blurb:
       "Packing-only or packing plus unpacking at the destination, using bubble wrap, corrugated sheets, cartons and tape suited to each item.",
     icon: PackageOpen,
-    image: packing,
-    imageAlt: "Close-up of hands using bubble wrap and tape to protect fragile items",
+    image: WA_PACKING,
+    cardImage: aiPacking,
+    imageAlt: "Real photo: Haier appliance professionally packed and protected for transport",
+    realPhoto: true,
     heroEyebrow: "Careful packing service",
     intro: [
       "Most damage during a move happens because of weak packing, not the journey. We use material chosen for each category — crockery, electronics, glass, clothes, books, kitchen items — and seal cartons properly before loading.",
@@ -180,8 +198,10 @@ export const services: Service[] = [
     blurb:
       "Street-to-street and area-to-area shifting in Rajahmundry, handled quickly with the right vehicle size for your load.",
     icon: MapPin,
-    image: localShift,
-    imageAlt: "Professional movers handling a local shifting job in Rajahmundry",
+    image: WA_LOCAL,
+    cardImage: aiLocal,
+    imageAlt: "Real photo: multiple packed cartons and household goods prepared for local relocation",
+    realPhoto: true,
     heroEyebrow: "Local shifting in Rajahmundry",
     intro: [
       "Local moves inside Rajahmundry are often finished the same day. Because we work in the city every day, we plan around narrow lanes, lift availability and parking before the vehicle arrives.",
@@ -224,8 +244,10 @@ export const services: Service[] = [
     blurb:
       "Planned intercity shifting with stronger packing, secured loading and a delivery timeline confirmed before your goods leave.",
     icon: RouteIcon,
-    image: highway,
-    imageAlt: "White moving truck travelling on an Indian highway at sunrise",
+    image: WA_GOODS,
+    cardImage: aiDomestic,
+    imageAlt: "Real photo: tall household items securely packed and ready for domestic relocation",
+    realPhoto: true,
     heroEyebrow: "Domestic relocation from Rajahmundry",
     intro: [
       "A long journey puts more stress on packing than the loading itself. For intercity moves we reinforce cartons, brace furniture and secure the load so it stays stable over hundreds of kilometres.",
@@ -268,8 +290,10 @@ export const services: Service[] = [
     blurb:
       "Manpower-only support when you have transport arranged and need experienced hands to load or unload safely.",
     icon: ArrowUpDown,
-    image: loading,
-    imageAlt: "Moving team loading organised sealed boxes into a white box truck",
+    image: WA_LOADING,
+    cardImage: aiLoading,
+    imageAlt: "Real photo: packed household goods loaded onto a transport vehicle",
+    realPhoto: true,
     heroEyebrow: "Loading and unloading support",
     intro: [
       "Loading is where most avoidable damage occurs. Weight has to be balanced, heavy items placed first and fragile cartons kept on top and strapped.",
@@ -312,8 +336,10 @@ export const services: Service[] = [
     blurb:
       "Closed-body vehicles matched to your load, with the goods braced and strapped so they arrive in the condition they left.",
     icon: ShieldCheck,
-    image: transport,
-    imageAlt: "Safe and secure transportation of household goods by Aditya Packers and Movers",
+    image: WA_SECURE,
+    cardImage: aiTransport,
+    imageAlt: "Real photo: multiple large household and furniture items professionally wrapped and secured",
+    realPhoto: true,
     heroEyebrow: "Secure transport of household goods",
     intro: [
       "Transport is the part of a move you cannot watch. We reduce risk in the ways that matter: the correct vehicle size, a load that cannot move, and a driver and crew who know the route.",
@@ -357,6 +383,7 @@ export const services: Service[] = [
       "Your car or bike prepared, inspected and strapped for transport, so it travels without being driven the whole distance.",
     icon: Car,
     image: vehicle,
+    cardImage: vehicle,
     imageAlt: "Movers preparing a family car for secure transport with wheel straps",
     heroEyebrow: "Car and bike transport",
     intro: [
@@ -401,6 +428,7 @@ export const services: Service[] = [
       "Shop shifting planned so your stock stays countable, your fittings stay usable and your shutter reopens quickly.",
     icon: Store,
     image: shop,
+    cardImage: shop,
     imageAlt: "Movers packing shelving and cartons in a clean retail shop",
     heroEyebrow: "Shop shifting Rajahmundry",
     intro: [
@@ -440,16 +468,20 @@ export const services: Service[] = [
 ];
 
 export const galleryImages = [
-  { src: packing, alt: "Fragile items being wrapped with bubble wrap and tape", category: "Packing", caption: "Fragile packing with layered protection" },
-  { src: household, alt: "Movers protecting a sofa inside a living room", category: "House Move", caption: "Furniture wrapped before it leaves the room" },
-  { src: loading, alt: "Sealed cartons being loaded into a closed-body truck", category: "Loading", caption: "Balanced loading, strapped before dispatch" },
-  { src: highway, alt: "Moving truck travelling on a highway at sunrise", category: "Transport", caption: "On the road for a domestic relocation" },
-  { src: office, alt: "Team packing computers and files in an office", category: "Office Move", caption: "Workstations labelled and packed in sequence" },
-  { src: vehicle, alt: "A car being prepared and strapped for transport", category: "Vehicle", caption: "Condition noted before the vehicle is secured" },
-  { src: localShift, alt: "Movers handling a local shifting job in Rajahmundry", category: "Unloading", caption: "Unloading room by room, not in a rush" },
-  { src: shop, alt: "Shop shelving and cartons being packed for relocation", category: "Shop Move", caption: "Stock packed in countable batches" },
-  { src: delivery, alt: "Family in a new home while movers place boxes and assemble furniture", category: "Delivery", caption: "Boxes placed where they belong" },
-  { src: boxes, alt: "Neatly stacked sealed cartons with orange tape in an empty room", category: "Packing", caption: "Sealed, marked and ready to load" },
+  { src: WA_HOUSEHOLD, alt: "Packed household items ready for shifting", category: "House Move", caption: "Household goods packed and ready", realPhoto: true },
+  { src: WA_PACKING,   alt: "Haier appliance professionally packed for transport", category: "Packing", caption: "Appliance wrapped and protected", realPhoto: true },
+  { src: WA_FURNITURE, alt: "Sofas and furniture completely wrapped and secured", category: "House Move", caption: "Furniture fully wrapped before loading", realPhoto: true },
+  { src: WA_SOFA,      alt: "Sofa covered and packed household items ready to move", category: "Packing", caption: "Sofa and goods secured for transport", realPhoto: true },
+  { src: WA_SECURE,    alt: "Multiple large household items professionally wrapped", category: "Packing", caption: "Full household wrapped and secured", realPhoto: true },
+  { src: WA_GOODS,     alt: "Tall household items securely packed for transportation", category: "Loading", caption: "Tall items packed for safe transit", realPhoto: true },
+  { src: WA_LOCAL,     alt: "Multiple packed cartons prepared for local relocation", category: "House Move", caption: "Cartons ready for local shifting", realPhoto: true },
+  { src: WA_MOVING,    alt: "Packed boxes and household goods ready for transport", category: "Loading", caption: "Goods packed and staged for loading", realPhoto: true },
+  { src: WA_LOADING,   alt: "Packed household goods loaded onto a transport vehicle", category: "Loading", caption: "Loaded and secured for the road", realPhoto: true },
+  { src: office,       alt: "Team packing computers and files in an office", category: "Office Move", caption: "Workstations labelled and packed in sequence", realPhoto: false },
+  { src: vehicle,      alt: "A car being prepared and strapped for transport", category: "Vehicle", caption: "Condition noted before the vehicle is secured", realPhoto: false },
+  { src: shop,         alt: "Shop shelving and cartons being packed for relocation", category: "Shop Move", caption: "Stock packed in countable batches", realPhoto: false },
+  { src: delivery,     alt: "Family in a new home while movers place boxes", category: "Delivery", caption: "Boxes placed where they belong", realPhoto: false },
+  { src: boxes,        alt: "Neatly stacked sealed cartons ready to load", category: "Packing", caption: "Sealed, marked and ready to load", realPhoto: false },
 ];
 
 export const galleryCategories = [
@@ -458,8 +490,6 @@ export const galleryCategories = [
   "House Move",
   "Office Move",
   "Loading",
-  "Unloading",
-  "Transport",
   "Vehicle",
   "Shop Move",
   "Delivery",
