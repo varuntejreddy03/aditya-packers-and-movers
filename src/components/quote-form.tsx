@@ -194,7 +194,7 @@ export function QuoteForm({
       <div className="mt-5 flex flex-col gap-2 sm:flex-row">
         <Button type="submit" variant="whatsapp" size="lg" className="w-full sm:w-auto">
           <MessageCircle />
-          Send on WhatsApp
+          {opened ? "Open WhatsApp Again" : "Send Quote Request on WhatsApp"}
         </Button>
         <Button asChild variant="outlineNavy" size="lg" className="w-full sm:w-auto">
           <a href={site.phonePrimaryTel}>
@@ -206,7 +206,7 @@ export function QuoteForm({
 
       <p aria-live="polite" className="mt-3 text-xs text-muted-foreground">
         {opened
-          ? "WhatsApp should have opened with your details. If it did not, please call us instead — nothing is stored on this website."
+          ? "✅ WhatsApp opened with your details pre-filled — just tap Send. If it didn't open, call us directly."
           : "Your details are not stored on this website. Submitting opens WhatsApp so you can send them to us directly."}
       </p>
 

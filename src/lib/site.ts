@@ -51,16 +51,33 @@ export type QuoteFields = {
 
 export function buildQuoteMessage(v: QuoteFields) {
   const lines = [
-    `Hello ${site.name}, I would like a free moving quote.`,
-    "",
-    `Name: ${v.name}`,
-    `Mobile: ${v.mobile}`,
-    `Moving from: ${v.movingFrom}`,
-    `Moving to: ${v.movingTo}`,
-    `Service: ${v.service}`,
-    `Preferred date: ${v.date}`,
+    `🙏 *Hello Aditya Packers and Movers!*`,
+    `I would like to request a *free moving quote*.`,
+    ``,
+    `━━━━━━━━━━━━━━━━━━━━`,
+    `📋 *ENQUIRY DETAILS*`,
+    `━━━━━━━━━━━━━━━━━━━━`,
+    ``,
+    `👤 *Name:* ${v.name}`,
+    `📱 *Mobile:* ${v.mobile}`,
+    ``,
+    `📦 *Service Required:* ${v.service}`,
+    ``,
+    `📍 *Moving From:* ${v.movingFrom}`,
+    `🏠 *Moving To:* ${v.movingTo}`,
+    ``,
+    `📅 *Preferred Date:* ${v.date}`,
   ];
-  if (v.details && v.details.trim()) lines.push(`Details: ${v.details.trim()}`);
+  if (v.details && v.details.trim()) {
+    lines.push(``);
+    lines.push(`📝 *Additional Details:*`);
+    lines.push(v.details.trim());
+  }
+  lines.push(``);
+  lines.push(`━━━━━━━━━━━━━━━━━━━━`);
+  lines.push(`Please confirm availability and share a quote at your earliest convenience.`);
+  lines.push(``);
+  lines.push(`Thank you! 🙏`);
   return lines.join("\n");
 }
 
