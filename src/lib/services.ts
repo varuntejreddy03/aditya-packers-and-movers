@@ -11,14 +11,15 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import household from "@/assets/household-shifting.jpg";
-import office from "@/assets/office-move.jpg";
-import packing from "@/assets/packing-detail.jpg";
-import loading from "@/assets/loading-truck.jpg";
-import vehicle from "@/assets/vehicle-transport.jpg";
-import highway from "@/assets/domestic-relocation.jpg";
-import unloading from "@/assets/unloading.jpg";
-import shop from "@/assets/shop-relocation.jpg";
+import household from "@/assets/svc-household-shifting.png";
+import office from "@/assets/svc-office-shifting.png";
+import packing from "@/assets/svc-packing-unpacking.png";
+import localShift from "@/assets/svc-local-shifting.png";
+import highway from "@/assets/svc-domestic-relocation.png";
+import loading from "@/assets/svc-loading-unloading.png";
+import transport from "@/assets/svc-safe-transportation.png";
+import vehicle from "@/assets/svc-vehicle-transportation.png";
+import shop from "@/assets/svc-shop-relocation.png";
 import delivery from "@/assets/delivery-unpacking.jpg";
 import boxes from "@/assets/boxes-stack.jpg";
 
@@ -179,8 +180,8 @@ export const services: Service[] = [
     blurb:
       "Street-to-street and area-to-area shifting in Rajahmundry, handled quickly with the right vehicle size for your load.",
     icon: MapPin,
-    image: unloading,
-    imageAlt: "Two movers unloading sealed cartons from a small truck outside a house",
+    image: localShift,
+    imageAlt: "Professional movers handling a local shifting job in Rajahmundry",
     heroEyebrow: "Local shifting in Rajahmundry",
     intro: [
       "Local moves inside Rajahmundry are often finished the same day. Because we work in the city every day, we plan around narrow lanes, lift availability and parking before the vehicle arrives.",
@@ -311,8 +312,8 @@ export const services: Service[] = [
     blurb:
       "Closed-body vehicles matched to your load, with the goods braced and strapped so they arrive in the condition they left.",
     icon: ShieldCheck,
-    image: highway,
-    imageAlt: "Clean white moving truck on a highway representing safe transportation",
+    image: transport,
+    imageAlt: "Safe and secure transportation of household goods by Aditya Packers and Movers",
     heroEyebrow: "Secure transport of household goods",
     intro: [
       "Transport is the part of a move you cannot watch. We reduce risk in the ways that matter: the correct vehicle size, a load that cannot move, and a driver and crew who know the route.",
@@ -445,7 +446,7 @@ export const galleryImages = [
   { src: highway, alt: "Moving truck travelling on a highway at sunrise", category: "Transport", caption: "On the road for a domestic relocation" },
   { src: office, alt: "Team packing computers and files in an office", category: "Office Move", caption: "Workstations labelled and packed in sequence" },
   { src: vehicle, alt: "A car being prepared and strapped for transport", category: "Vehicle", caption: "Condition noted before the vehicle is secured" },
-  { src: unloading, alt: "Movers unloading cartons onto a trolley outside a home", category: "Unloading", caption: "Unloading room by room, not in a rush" },
+  { src: localShift, alt: "Movers handling a local shifting job in Rajahmundry", category: "Unloading", caption: "Unloading room by room, not in a rush" },
   { src: shop, alt: "Shop shelving and cartons being packed for relocation", category: "Shop Move", caption: "Stock packed in countable batches" },
   { src: delivery, alt: "Family in a new home while movers place boxes and assemble furniture", category: "Delivery", caption: "Boxes placed where they belong" },
   { src: boxes, alt: "Neatly stacked sealed cartons with orange tape in an empty room", category: "Packing", caption: "Sealed, marked and ready to load" },
