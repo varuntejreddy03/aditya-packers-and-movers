@@ -111,8 +111,7 @@ function HomePage() {
             </p>
 
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Backed by our experience with{" "}
-              <span className="font-semibold text-primary">Sri Lakshmi Kalyani Packers and Movers</span>
+              Backed by years of established experience in packing and moving
               {" "}— proven expertise, professional handling and reliable relocation on every move.
             </p>
 
